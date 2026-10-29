@@ -1,7 +1,7 @@
 import { LEVEL_META, TOPIC_META } from "@/lib/constants";
 import type { Level, Topic } from "@/types/question";
 
-const LEVEL_DOT: Record<Level, string> = {
+export const LEVEL_DOT: Record<Level, string> = {
   basic: "bg-emerald-500",
   intermediate: "bg-sky-500",
   advanced: "bg-amber-500",

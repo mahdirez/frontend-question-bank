@@ -1,20 +1,21 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useId } from "react";
 import type { Question } from "@/types/question";
 import { LevelBadge, TopicBadge } from "./Badges";
 import CodeBlock from "./CodeBlock";
 
 interface QuestionCardProps {
   question: Question;
-  defaultOpen?: boolean;
+  open: boolean;
+  onToggle: () => void;
 }
 
 export default function QuestionCard({
   question,
-  defaultOpen = false,
+  open,
+  onToggle,
 }: QuestionCardProps) {
-  const [open, setOpen] = useState(defaultOpen);
   const panelId = useId();
   const paragraphs = question.answer.split("\n\n");
 
@@ -25,7 +26,7 @@ export default function QuestionCard({
     >
       <button
         type="button"
-        onClick={() => setOpen(v => !v)}
+        onClick={onToggle}
         aria-expanded={open}
         aria-controls={panelId}
         className="flex w-full items-start justify-between gap-4 p-5 text-start"
