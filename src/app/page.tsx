@@ -1,13 +1,11 @@
 import Link from "next/link";
-
-const levels = [
-  { name: "Basic", desc: "HTML, CSS and JavaScript fundamentals" },
-  { name: "Intermediate", desc: "Async, closures, React, TypeScript" },
-  { name: "Advanced", desc: "Performance, patterns, rendering strategies" },
-  { name: "Engineering", desc: "Architecture, scalability, trade-offs" },
-];
+import { LEVEL_META } from "@/lib/constants";
+import { getLevelCounts } from "@/lib/questions";
+import { LEVELS } from "@/types/question";
 
 export default function Home() {
+  const counts = getLevelCounts();
+
   return (
     <section className="py-20">
       <p className="mb-4 text-sm font-medium text-accent">
@@ -39,14 +37,19 @@ export default function Home() {
       </div>
 
       <div className="mt-16 grid gap-4 sm:grid-cols-2">
-        {levels.map((level, i) => (
+        {LEVELS.map((level, i) => (
           <div
-            key={level.name}
+            key={level}
             className="rounded-xl border border-border bg-card p-5 transition-colors hover:border-accent"
           >
-            <span className="font-mono text-xs text-muted">0{i + 1}</span>
-            <h3 className="mt-2 font-medium">{level.name}</h3>
-            <p className="mt-1 text-sm text-muted">{level.desc}</p>
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-xs text-muted">0{i + 1}</span>
+              <span className="text-xs text-muted">
+                {counts[level]} questions
+              </span>
+            </div>
+            <h3 className="mt-2 font-medium">{LEVEL_META[level].name}</h3>
+            <p className="mt-1 text-sm text-muted">{LEVEL_META[level].desc}</p>
           </div>
         ))}
       </div>
