@@ -26,11 +26,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const question = getQuestionById(id);
 
-  if (!question) return { title: "Question not found | FE Question Bank" };
+  if (!question) return { title: "Question not found" };
+
+  const description = summarize(question.answer);
 
   return {
-    title: `${question.question} | FE Question Bank`,
-    description: summarize(question.answer),
+    title: question.question,
+    description,
+    alternates: { canonical: `/questions/${question.id}` },
+    openGraph: { title: question.question, description },
   };
 }
 

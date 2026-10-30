@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   return (
@@ -12,7 +13,7 @@ export default function Header() {
           FE Question Bank
         </Link>
 
-        <nav className="flex items-center gap-6 text-sm text-muted">
+        <nav className="flex items-center gap-5 text-sm text-muted">
           <Link
             href="/questions"
             className="transition-colors hover:text-foreground"
@@ -25,6 +26,7 @@ export default function Header() {
           >
             Quiz
           </Link>
+          <ThemeToggle />
         </nav>
       </div>
     </header>

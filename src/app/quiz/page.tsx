@@ -3,7 +3,7 @@ import Quiz from "@/components/quiz/Quiz";
 import { getAllQuestions } from "@/lib/questions";
 
 export const metadata: Metadata = {
-  title: "Quiz | FE Question Bank",
+  title: "Quiz",
   description:
     "Test yourself with a randomized frontend quiz and track your progress.",
 };

@@ -4,7 +4,7 @@ import QuestionsExplorer from "@/components/QuestionsExplorer";
 import { getAllQuestions } from "@/lib/questions";
 
 export const metadata: Metadata = {
-  title: "Questions | FE Question Bank",
+  title: "Questions",
   description: "Browse and filter frontend questions by level and topic.",
 };
 
