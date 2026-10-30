@@ -34,3 +34,27 @@ export function getTopicCounts(): Record<Topic, number> {
     TOPICS.map(topic => [topic, getQuestionsByTopic(topic).length]),
   ) as Record<Topic, number>;
 }
+
+export function getAdjacentQuestions(id: string): {
+  prev?: Question;
+  next?: Question;
+} {
+  const index = questions.findIndex(q => q.id === id);
+  if (index === -1) return {};
+  return { prev: questions[index - 1], next: questions[index + 1] };
+}
+
+export function getRelatedQuestions(question: Question, limit = 3): Question[] {
+  return questions
+    .filter(q => q.id !== question.id)
+    .map(q => ({
+      q,
+      score:
+        (q.topic === question.topic ? 2 : 0) +
+        (q.level === question.level ? 1 : 0),
+    }))
+    .filter(item => item.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map(item => item.q);
+}

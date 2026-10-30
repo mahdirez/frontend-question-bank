@@ -1,9 +1,10 @@
 "use client";
 
 import { useId } from "react";
+import Link from "next/link";
 import type { Question } from "@/types/question";
+import AnswerContent from "./AnswerContent";
 import { LevelBadge, TopicBadge } from "./Badges";
-import CodeBlock from "./CodeBlock";
 
 interface QuestionCardProps {
   question: Question;
@@ -17,7 +18,6 @@ export default function QuestionCard({
   onToggle,
 }: QuestionCardProps) {
   const panelId = useId();
-  const paragraphs = question.answer.split("\n\n");
 
   return (
     <article
@@ -61,14 +61,15 @@ export default function QuestionCard({
         }`}
       >
         <div className="overflow-hidden">
-          <div className="space-y-4 border-t border-border px-5 py-5 text-sm leading-relaxed text-foreground/80">
-            {paragraphs.map((p, i) => (
-              <p key={i} className="whitespace-pre-line">
-                {p}
-              </p>
-            ))}
+          <div className="space-y-4 border-t border-border px-5 py-5">
+            <AnswerContent answer={question.answer} code={question.code} />
 
-            {question.code && <CodeBlock {...question.code} />}
+            <Link
+              href={`/questions/${question.id}`}
+              className="inline-flex text-sm text-accent transition-opacity hover:opacity-80"
+            >
+              Open full page →
+            </Link>
           </div>
         </div>
       </div>
