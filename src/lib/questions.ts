@@ -7,6 +7,14 @@ import {
   type Topic,
 } from "@/types/question";
 
+const seenIds = new Set<string>();
+for (const q of questions) {
+  if (seenIds.has(q.id)) {
+    throw new Error(`Duplicate question id: ${q.id}`);
+  }
+  seenIds.add(q.id);
+}
+
 export function getAllQuestions(): Question[] {
   return questions;
 }
