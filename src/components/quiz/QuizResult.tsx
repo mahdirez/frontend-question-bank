@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { LevelBadge, TopicBadge } from "@/components/Badges";
 import type { Question } from "@/types/question";
 import type { Answers } from "./QuizSession";

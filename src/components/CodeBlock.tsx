@@ -19,7 +19,10 @@ export default function CodeBlock({ language, content }: CodeSnippet) {
   }
 
   return (
-    <div className="overflow-hidden rounded-lg border border-border bg-background">
+    <div
+      dir="ltr"
+      className="overflow-hidden rounded-lg border border-border bg-background"
+    >
       <div className="flex items-center justify-between border-b border-border px-3 py-1.5">
         <span className="font-mono text-xs uppercase text-muted">
           {language}

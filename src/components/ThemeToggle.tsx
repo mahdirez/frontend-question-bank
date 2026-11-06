@@ -1,7 +1,8 @@
 "use client";
+import { useTranslations } from "next-intl";
 
 const STORAGE_KEY = "feqb:theme";
-
+const t = useTranslations("Common");
 export default function ThemeToggle() {
   function toggle() {
     const root = document.documentElement;
@@ -19,8 +20,8 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={toggle}
-      aria-label="Toggle theme"
-      title="Toggle theme"
+      aria-label={t("toggleTheme")}
+      title={t("toggleTheme")}
       className="flex h-8 w-8 items-center justify-center rounded-md border border-border text-muted transition-colors hover:border-accent hover:text-foreground"
     >
       {/* Sun: shown in dark mode */}

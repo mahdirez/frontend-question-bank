@@ -72,3 +72,25 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+html[lang="fa"] body {
+  font-family: var(--font-vazirmatn), system-ui, sans-serif;
+  line-height: 1.75;
+}
+
+html[lang="fa"] .tracking-tight {
+  letter-spacing: 0;
+}
+
+html[lang="fa"] :is(h1, h2, h3) {
+  line-height: 1.5;
+}
+
+pre,
+code {
+  direction: ltr;
+  unicode-bidi: plaintext;
+}
+
+pre {
+  text-align: left;
+}

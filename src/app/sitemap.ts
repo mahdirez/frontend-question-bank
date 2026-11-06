@@ -1,15 +1,24 @@
 import type { MetadataRoute } from "next";
+import { routing } from "@/i18n/routing";
 import { getAllQuestions } from "@/lib/questions";
 import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ["", "/questions", "/quiz"].map(path => ({
-    url: `${SITE_URL}${path}`,
-  }));
+  const paths = [
+    "",
+    "/questions",
+    "/quiz",
+    ...getAllQuestions().map(q => `/questions/${q.id}`),
+  ];
 
-  const questions = getAllQuestions().map(q => ({
-    url: `${SITE_URL}/questions/${q.id}`,
-  }));
-
-  return [...pages, ...questions];
+  return paths.flatMap(path =>
+    routing.locales.map(locale => ({
+      url: `${SITE_URL}/${locale}${path}`,
+      alternates: {
+        languages: Object.fromEntries(
+          routing.locales.map(l => [l, `${SITE_URL}/${l}${path}`]),
+        ),
+      },
+    })),
+  );
 }

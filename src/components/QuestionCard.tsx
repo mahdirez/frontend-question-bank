@@ -1,7 +1,6 @@
 "use client";
-
+import { Link } from "@/i18n/navigation";
 import { useId } from "react";
-import Link from "next/link";
 import type { Question } from "@/types/question";
 import AnswerContent from "./AnswerContent";
 import { LevelBadge, TopicBadge } from "./Badges";

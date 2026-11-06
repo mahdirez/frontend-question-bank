@@ -1,0 +1,71 @@
+{
+  "Metadata": {
+    "title": "FE Question Bank",
+    "description": "A curated frontend question bank, from fundamentals to engineering."
+  },
+  "Common": {
+    "skipToContent": "Skip to content",
+    "toggleTheme": "Toggle theme"
+  },
+  "Header": {
+    "questions": "Questions",
+    "quiz": "Quiz"
+  },
+  "Footer": {
+    "text": "Built with Next.js · From basics to engineering"
+  },
+  "LanguageSwitcher": {
+    "label": "Switch language"
+  },
+  "Home": {
+    "eyebrow": "Frontend interview prep",
+    "title": "From the basics to frontend engineering.",
+    "subtitle": "A minimal, curated bank of questions to test and grow your frontend knowledge at every level.",
+    "browse": "Browse questions",
+    "quiz": "Start a quiz",
+    "questionsCount": "{count, plural, one {# question} other {# questions}}"
+  },
+  "Levels": {
+    "basic": {
+      "name": "Basic",
+      "desc": "HTML, CSS and JavaScript fundamentals"
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "desc": "Async, closures, React, TypeScript"
+    },
+    "advanced": {
+      "name": "Advanced",
+      "desc": "Performance, patterns, rendering strategies"
+    },
+    "engineering": {
+      "name": "Engineering",
+      "desc": "Architecture, scalability, trade-offs"
+    }
+  },
+  "Topics": {
+    "html": "HTML",
+    "css": "CSS",
+    "javascript": "JavaScript",
+    "typescript": "TypeScript",
+    "react": "React",
+    "nextjs": "Next.js",
+    "performance": "Performance",
+    "accessibility": "Accessibility",
+    "testing": "Testing",
+    "architecture": "Architecture",
+    "security": "Security",
+    "browser-network": "Browser & Network"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "cta": "Browse questions"
+  },
+  "Error": {
+    "label": "Error",
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Please try again.",
+    "retry": "Try again"
+  }
+}

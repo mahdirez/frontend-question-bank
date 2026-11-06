@@ -1,0 +1,71 @@
+{
+  "Metadata": {
+    "title": "بانک سوالات فرانت‌اند",
+    "description": "مجموعه‌ای گزینش‌شده از سوالات فرانت‌اند، از مفاهیم پایه تا مهندسی."
+  },
+  "Common": {
+    "skipToContent": "رفتن به محتوای اصلی",
+    "toggleTheme": "تغییر تم"
+  },
+  "Header": {
+    "questions": "سوالات",
+    "quiz": "آزمون"
+  },
+  "Footer": {
+    "text": "ساخته‌شده با Next.js · از مفاهیم پایه تا مهندسی"
+  },
+  "LanguageSwitcher": {
+    "label": "تغییر زبان"
+  },
+  "Home": {
+    "eyebrow": "آمادگی مصاحبه فرانت‌اند",
+    "title": "از مفاهیم پایه تا مهندسی فرانت‌اند.",
+    "subtitle": "بانکی مینیمال و گزینش‌شده از سوالات برای سنجش و رشد دانش فرانت‌اند شما در هر سطح.",
+    "browse": "مشاهده سوالات",
+    "quiz": "شروع آزمون",
+    "questionsCount": "{count, plural, other {# سوال}}"
+  },
+  "Levels": {
+    "basic": {
+      "name": "پایه",
+      "desc": "مبانی HTML، CSS و JavaScript"
+    },
+    "intermediate": {
+      "name": "متوسط",
+      "desc": "Async، Closure، React و TypeScript"
+    },
+    "advanced": {
+      "name": "پیشرفته",
+      "desc": "پرفورمنس، الگوهای طراحی، استراتژی‌های رندرینگ"
+    },
+    "engineering": {
+      "name": "مهندسی",
+      "desc": "معماری، مقیاس‌پذیری و تصمیم‌گیری بین گزینه‌ها"
+    }
+  },
+  "Topics": {
+    "html": "HTML",
+    "css": "CSS",
+    "javascript": "JavaScript",
+    "typescript": "TypeScript",
+    "react": "React",
+    "nextjs": "Next.js",
+    "performance": "پرفورمنس",
+    "accessibility": "دسترسی‌پذیری",
+    "testing": "تست‌نویسی",
+    "architecture": "معماری",
+    "security": "امنیت",
+    "browser-network": "مرورگر و شبکه"
+  },
+  "NotFound": {
+    "title": "صفحه پیدا نشد",
+    "description": "صفحه‌ای که دنبالش هستی وجود ندارد یا جابه‌جا شده است.",
+    "cta": "مشاهده سوالات"
+  },
+  "Error": {
+    "label": "خطا",
+    "title": "مشکلی پیش آمد",
+    "description": "خطای غیرمنتظره‌ای رخ داد. لطفاً دوباره تلاش کن.",
+    "retry": "تلاش دوباره"
+  }
+}

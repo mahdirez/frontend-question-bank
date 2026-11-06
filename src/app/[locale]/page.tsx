@@ -1,38 +1,36 @@
-import Link from "next/link";
-import { LEVEL_META } from "@/lib/constants";
+import { getFormatter, getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { getLevelCounts } from "@/lib/questions";
 import { LEVELS } from "@/types/question";
 
-export default function Home() {
+export default async function Home() {
+  const t = await getTranslations("Home");
+  const tl = await getTranslations("Levels");
+  const format = await getFormatter();
   const counts = getLevelCounts();
 
   return (
     <section className="py-20">
-      <p className="mb-4 text-sm font-medium text-accent">
-        Frontend interview prep
-      </p>
+      <p className="mb-4 text-sm font-medium text-accent">{t("eyebrow")}</p>
 
       <h1 className="max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl">
-        From the basics to frontend engineering.
+        {t("title")}
       </h1>
 
-      <p className="mt-5 max-w-xl text-lg text-muted">
-        A minimal, curated bank of questions to test and grow your frontend
-        knowledge at every level.
-      </p>
+      <p className="mt-5 max-w-xl text-lg text-muted">{t("subtitle")}</p>
 
       <div className="mt-8 flex gap-3">
         <Link
           href="/questions"
           className="rounded-lg bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
         >
-          Browse questions
+          {t("browse")}
         </Link>
         <Link
           href="/quiz"
           className="rounded-lg border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-card"
         >
-          Start a quiz
+          {t("quiz")}
         </Link>
       </div>
 
@@ -43,13 +41,15 @@ export default function Home() {
             className="rounded-xl border border-border bg-card p-5 transition-colors hover:border-accent"
           >
             <div className="flex items-center justify-between">
-              <span className="font-mono text-xs text-muted">0{i + 1}</span>
+              <span className="font-mono text-xs text-muted">
+                {format.number(i + 1, { minimumIntegerDigits: 2 })}
+              </span>
               <span className="text-xs text-muted">
-                {counts[level]} questions
+                {t("questionsCount", { count: counts[level] })}
               </span>
             </div>
-            <h3 className="mt-2 font-medium">{LEVEL_META[level].name}</h3>
-            <p className="mt-1 text-sm text-muted">{LEVEL_META[level].desc}</p>
+            <h3 className="mt-2 font-medium">{tl(`${level}.name`)}</h3>
+            <p className="mt-1 text-sm text-muted">{tl(`${level}.desc`)}</p>
           </div>
         ))}
       </div>
